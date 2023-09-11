@@ -73,7 +73,12 @@ operatorButtons.forEach((operatorButton) => {
 
             let questionCount = 0;
 
-            question.innerHTML = `
+            if(operator === "Division") {
+                question.textContent = `${questions[0][0]} ${questions[0][3]} ${questions[0][1]} =`;
+                input.style.textAlign = `center`;
+                
+            } else {
+                question.innerHTML = `
                 <div class="lateral-format">
                     <span></span>
                     <span>
@@ -86,6 +91,7 @@ operatorButtons.forEach((operatorButton) => {
                         ${questions[0][1]}
                     </span>
                 </div>`;
+            }
 
 
             // Move the event listener outside the loop
@@ -112,19 +118,24 @@ operatorButtons.forEach((operatorButton) => {
                     
                     clearInputField();
                     if (questionCount <= 9) {
-                        question.innerHTML = `
-                            <div class="lateral-format">
-                                <span></span>
-                                <span>
-                                    ${questions[questionCount][0]}
-                                </span>
-                                <span class="lower-row">
-                                    ${questions[questionCount][3]}
-                                </span>
-                                <span class="lower-row">
-                                    ${questions[questionCount][1]}
-                                </span>
-                            </div>`;
+                        if(operator === "Division") {
+                            question.textContent = `${questions[questionCount][0]} ${questions[questionCount][3]} ${questions[questionCount][1]} =`;
+                            input.style.textAlign = `center`;
+                        } else {
+                            question.innerHTML = `
+                                <div class="lateral-format">
+                                    <span></span>
+                                    <span>
+                                        ${questions[questionCount][0]}
+                                    </span>
+                                    <span class="lower-row">
+                                        ${questions[questionCount][3]}
+                                    </span>
+                                    <span class="lower-row">
+                                        ${questions[questionCount][1]}
+                                    </span>
+                                </div>`;
+                        }
                     }
                 }
 
@@ -288,7 +299,7 @@ function getOperatorSign(operator) {
         case "Multiplication":
         return 'x';
         case "Division":
-        return '/';
+        return '÷';
         default:
         return '';
     }
@@ -325,7 +336,7 @@ async function divisionOperation() {
 
     const a = (await numberRandomizer(maxDividend / b)) * b;
 
-    const sign = '/';
+    const sign = '÷';
     const c = a / b;
 
     return [a, b, c, sign];
