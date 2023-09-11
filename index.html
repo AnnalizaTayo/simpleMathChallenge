@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Simple Math Challenge</title>
+</head>
+<body>
+    <main class="simpleMathGame">
+        <section class="content-container" id="pageA">
+            <div class="container operator-selection">
+                <h1>Please Choose an Operator</h1>
+                <button class="calculate-button button" data-operator="Addition">
+                    Addition
+                </button>
+                <button class="calculate-button button" data-operator="Subtraction">
+                    Subtraction
+                </button>
+                <button class="calculate-button button" data-operator="Multiplication">
+                    Multiplication
+                </button>
+                <button class="calculate-button button" data-operator="Division">
+                    Division
+                </button>
+                <button class="calculate-button button" data-operator="Random">
+                    Random
+                </button> 
+            </div>  
+        </section>
+        <section class="content-container" id="pageB" style="display: none;">
+            <div class="container instruction">
+                <h1>You've Chosen:</h1>
+                <h1 id="operator"></h1>
+                <p>I'm going to provide you with ten sets of randomly generated problems based on your selected Arithmetic Operation, which you'll answer one at a time. Please type your response into the corresponding entry area.</p>
+                <button class="proceed button">Continue?</button>
+                <button class="quit back button">Cancel?</button>
+            </div>  
+        </section>
+        <section class="content-container" id="pageC" style="display: none;">
+            <div class="container">
+                <div class="loading" id="prompt"></div>
+                <div class="progress">
+                    <div class="progress-fill"></div>
+                </div>
+                <form id="form" style="display: none;">
+                    <h1 id="form-header"></h1>
+                    <h2 id="question"></h2>
+                    
+                    <input type="text" name="answer-input" id="answer-input" maxlength="3" autocomplete="off" required/>
+                    <p class="warning"></p>
+                    <button class="submit button">Submit</button>
+                    <button class="view button" style="display: none;">
+                        View Summary
+                    </button>
+                    <button type="reset" class="quit back button">
+                        Quit Game
+                    </button>
+                </form>
+            </div>
+        </section>
+        <section class="content-container" id="pageD" style="display: none;">
+            <div class="container">
+                <h1 id="summary-header"></h1>
+                <h2 id="score"></h2>
+                <div class="summary">
+                    <ul id="question-list"></ul>
+                </div>
+                <button type="reset" class="quit reset button">
+                    Play Again
+                </button>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
