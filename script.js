@@ -1,4 +1,4 @@
-const operators = ['Addition', 'Subtraction', 'Multiplication', 'Division'];
+const operators = [ '', 'Addition', 'Subtraction', 'Multiplication', 'Division'];
 
 const operatorButtons = document.querySelectorAll(".calculate-button");
 const promptText = document.getElementById("prompt");
@@ -61,7 +61,12 @@ operatorButtons.forEach((operatorButton) => {
             promptText.textContent = '';
             operatorUsed.textContent = 'Randomizing Operator...';
             randomIndex = await numberRandomizer(operators.length - 1);
-            operatorUsed.innerHTML = `${operators[randomIndex]}`;
+            if (randomIndex === 0) {
+                randomIndex = await numberRandomizer(operators.length - 1);
+            } else {
+                operatorUsed.innerHTML = `${operators[randomIndex]}`;
+            }
+            
         } else {
             promptText.textContent = '';
             operatorUsed.innerHTML = `${operator}`;
@@ -88,7 +93,7 @@ operatorButtons.forEach((operatorButton) => {
 
             let questionCount = 0;
 
-            if(operator === "Division") {
+            if(operator === "Division" || (operator === "Random" && questions[0][3] == "÷")) {
                 question.textContent = `${questions[0][0]} ${questions[0][3]} ${questions[0][1]} =`;
                 input.style.textAlign = `center`;
                 
