@@ -32,7 +32,7 @@ yes.addEventListener("click", () => {
 });
 
 no.addEventListener("click", () => {
-    alertContentContainer.style.display = "flex";
+    alertContentContainer.style.display = "none";
 });
 
 alertBackgroundClick.addEventListener("click", () => {
