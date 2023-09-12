@@ -16,12 +16,27 @@ const summaryHeader = document.getElementById('summary-header');
 const scoreDisplay = document.getElementById('score');
 const quitGameButtons = document.querySelectorAll('.quit');
 const viewButton = document.querySelector('.view');
+const alertContentContainer = document.querySelector('.alert-content-container');
+const yes = document.getElementById('yes');
+const no = document.getElementById('no');
+const alertBackgroundClick = document.querySelector('.alert-container-background');
 
 quitGameButtons.forEach((quitGameButton) => {
     quitGameButton.addEventListener("click", () => {
-        // Reload the current page
-        location.reload();
+        alertContentContainer.style.display = "flex";
     });
+});
+
+yes.addEventListener("click", () => {
+    location.reload();
+});
+
+no.addEventListener("click", () => {
+    alertContentContainer.style.display = "flex";
+});
+
+alertBackgroundClick.addEventListener("click", () => {
+    alertContentContainer.style.display = "none";
 });
 
 input.addEventListener("input", (e) => {

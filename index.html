@@ -7,6 +7,17 @@
     <title>Simple Math Challenge</title>
 </head>
 <body>
+    <div class="alert-content-container" style="display: none;">
+        <div class="alert-container">
+            <div class="alert-details">
+                <p>Are you sure you want to quit the game?</p>
+                <button class="yes button" id="yes">Yes</button>
+                <button class="no button" id="no">No</button>
+            </div>
+        </div>
+        <div class="alert-container-background">
+        </div>
+    </div>
     <main class="simpleMathGame">
         <section class="content-container" id="pageA">
             <div class="container operator-selection">
@@ -46,7 +57,7 @@
                 <form id="form" style="display: none;">
                     <h1 id="form-header"></h1>
                     <h2 id="question"></h2>
-                    <input type="text" name="answer-input" id="answer-input" maxlength="3" autocomplete="off" required/>
+                    <input type="text" name="answer-input" id="answer-input" inputmode="numeric" maxlength="3" autocomplete="off" required/>
                     <p class="warning"></p>
                     <button class="submit button">Submit</button>
                     <button class="view button" style="display: none;">
@@ -70,6 +81,7 @@
                 </button>
             </div>
         </section>
+
     </main>
     <script src="script.js"></script>
 </body>
