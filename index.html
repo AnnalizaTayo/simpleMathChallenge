@@ -45,7 +45,7 @@
                 <h1 id="operator"></h1>
                 <p>I'm going to provide you with ten sets of randomly generated problems based on your selected Arithmetic Operation, which you'll answer one at a time. Please type your response into the corresponding entry area.</p>
                 <button class="proceed button">Continue?</button>
-                <button class="quit back button">Cancel?</button>
+                <button id="cancel" class="quit back button">Cancel?</button>
             </div>  
         </section>
         <section class="content-container" id="pageC" style="display: none;">
@@ -60,11 +60,14 @@
                     <input type="text" name="answer-input" id="answer-input" inputmode="numeric" maxlength="3" autocomplete="off" required/>
                     <p class="warning"></p>
                     <button class="submit button">Submit</button>
-                    <button class="view button" style="display: none;">
+                    <button type="reset" class="view button" style="display: none;">
                         View Summary
                     </button>
-                    <button type="reset" class="quit back button">
+                    <button type="reset" id="quit" class="quit back button">
                         Quit Game
+                    </button>
+                    <button type="reset" id="returnA" class="return back button" style="display: none;">
+                        Return Home
                     </button>
                 </form>
             </div>
@@ -76,7 +79,7 @@
                 <div class="summary">
                     <ul id="question-list"></ul>
                 </div>
-                <button type="reset" class="quit reset button">
+                <button id="returnB" class="return reset button">
                     Play Again
                 </button>
             </div>

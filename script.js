@@ -14,18 +14,32 @@ const warning = document.querySelector('.warning');
 const question = document.getElementById('question');
 const summaryHeader = document.getElementById('summary-header');
 const scoreDisplay = document.getElementById('score');
-const quitGameButtons = document.querySelectorAll('.quit');
+const quitGameButton = document.getElementById('quit');
+const cancelGameButton = document.getElementById('cancel');
+const returnHomeA = document.getElementById('returnA');
+const returnHomeB = document.getElementById('returnB');
 const viewButton = document.querySelector('.view');
 const alertContentContainer = document.querySelector('.alert-content-container');
 const yes = document.getElementById('yes');
 const no = document.getElementById('no');
 const alertBackgroundClick = document.querySelector('.alert-container-background');
 
-quitGameButtons.forEach((quitGameButton) => {
-    quitGameButton.addEventListener("click", () => {
-        alertContentContainer.style.display = "flex";
-    });
+
+quitGameButton.addEventListener("click", () => {
+    alertContentContainer.style.display = "flex";
 });
+
+cancelGameButton.addEventListener("click", () => {
+    location.reload();
+});
+
+returnHomeA.addEventListener("click", () => {
+        location.reload();
+    });
+
+returnHomeB.addEventListener("click", () => {
+        location.reload();
+    });
 
 yes.addEventListener("click", () => {
     location.reload();
@@ -163,6 +177,8 @@ operatorButtons.forEach((operatorButton) => {
                     input.style.display = "none";
                     submitButton.style.display = "none";
                     viewButton.style.display = "block";
+                    quitGameButton.style.display = "none";
+                    returnHomeA.style.display = "block";
                     
                     const score = scoreArray.reduce((count, value) => {
                         if (value === true) {
