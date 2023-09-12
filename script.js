@@ -138,7 +138,7 @@ operatorButtons.forEach((operatorButton) => {
                     
                     clearInputField();
                     if (questionCount <= 9) {
-                        if(operator === "Division") {
+                        if(operator === "Division" || (operator === "Random" && questions[0][3] == "÷")) {
                             question.textContent = `${questions[questionCount][0]} ${questions[questionCount][3]} ${questions[questionCount][1]} =`;
                             input.style.textAlign = `center`;
                         } else {
