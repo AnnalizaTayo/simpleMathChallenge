@@ -13,10 +13,45 @@ body {
     box-sizing: border-box;
     font-family: 'Schoolbell', cursive;
     letter-spacing: 3px;
+    color: #384254;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover strong {
+    text-decoration: underline;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    max-width: 100vw;
+}
+
+header .branding img {
+    width: 5rem;
+}
+
+.branding {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: #BBDED9;
+    padding: 0.5rem 2rem;
+    width: 100%;
+    color: #384254;
+    margin: auto;
+}
+
+.branding h1 {
+    font-size: 1.5rem;
 }
 
 .simpleMathGame {
-    min-height: 100vh;
+    min-height: calc(100vh - 8rem);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,15 +120,15 @@ body {
     padding: 0.5rem;
     font-weight: bolder;
     background-color: #BBDED9;
-    border-color: #ffffff;
+    border-color: #FFC9C6;
     cursor: pointer;
     font-size: 1.25rem;
     border-radius: 5px;
+    color: #000000;
 }
 
 .button:hover {
-    background-color: #ff9668;
-    color: white;
+    background-color: #FFC9C6;
 }
 
 #operator {
@@ -110,7 +145,7 @@ body {
 .progress {
     width: 100%;
     height: 1rem;
-    border: 3px solid #ff9668;
+    border: 3px solid #FFC9C6;
     border-radius: 5px;
     display: flex;
 }
@@ -125,8 +160,9 @@ body {
 }
 
 .back, #no {
-    background-color: #FFC9C6;
-    border-color: #ffffff;
+    background-color: #FAA0A0;
+    border-color: #BBDED9;
+    color: #000000;
 }
 
 .back, .proceed, .submit, .view, .reset, #no, #yes {
@@ -136,7 +172,7 @@ body {
 }
 
 .back:hover, .proceed:hover {
-    background-color: #ff9668;
+    background-color: #FFC9C6;
     border-color: #BBDED9;
     color: black;
 }
@@ -180,8 +216,11 @@ li span {
 }
 
 .span-header {
+    background-color: #FFC9C6;
+}
+
+.span-header h4{
     color: black;
-    background-color: #ff9668;
 }
 
 .check {
@@ -192,7 +231,7 @@ li span {
 
 .cross {
     font-weight: bold;
-    background-color: #FFC9C6;
+    background-color: #FAA0A0;
 }
 
 .lateral-format {
@@ -210,8 +249,61 @@ li span {
     border-bottom: 2px solid black;
 }
 
+footer {
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    background-color: #BBDED9;
+}
+
+
+
+
+/* responsive setup */
+@media (max-width: 310px) {
+    .simpleMathGame {
+        min-height: calc(100vh - 11rem);
+    }
+
+    .branding {
+        height: 8rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        height: 3rem;
+    }
+
+    .footerA {
+        display: none;
+    }
+
+    .footerB {
+        display: block !important;
+        text-align: center;
+    }
+}
+
+@media (max-width: 580px) {
+    
+    .small-screen-header {
+        display: block !important;
+    }
+
+    .medium-screen-header {
+        display: none !important;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
 
 @media (max-width:768px) {
+
     .container h1 {
         font-size: 1.5rem;
         margin: 0;
@@ -228,6 +320,12 @@ li span {
     }
     .alert-content-container {
         padding: 0.75rem;
+    }
+
+    @media (orientation: landscape) {
+        .content-container {
+            padding: 2rem 1rem;
+        }
     }
 }
 
@@ -249,8 +347,22 @@ li span {
         }
     }
 
-    .button {
-        margin: 0 auto;
-        width: 100%;
+    @media (orientation: landscape) {
+        .content-container {
+            padding: 2rem 1rem;
+        }
+    
+        .button {
+            margin: 0 auto;
+            width: 100%;
+        }
     }
 }
+
+/* 
+@media (min-width: 993px) {
+    .branding {
+        justify-content: flex-start;
+        margin: 0;
+    }
+} */
